@@ -1,0 +1,80 @@
+---
+title: "Como eu conduzo a IA pra entregar de verdade"
+description: "A IA quase nunca falha por incapacidade. Falha por falta de contexto. Como eu construo o sistema que alimenta, estrutura e verifica o que o modelo sabe."
+date: 2026-06-15
+lang: pt
+---
+
+Tem uma cena que eu vejo o tempo todo. Duas pessoas abrem a mesma IA, pedem a mesma coisa, e recebem resultados de qualidade completamente diferente. Uma sai falando que IA é hype. A outra entregou uma feature inteira no mesmo tempo. Mesmo modelo, mesmo dia.
+
+A diferença não é talento. E quase nunca é "o prompt secreto". É contexto.
+
+Trabalho com IA todo dia faz mais de dois anos, e se tem uma coisa que ficou clara nesse tempo é essa: a resposta da IA vale exatamente o que o contexto vale. Não importa o quão bom é o modelo. Se ele responde no escuro, ele chuta. Se ele responde sabendo, ele entrega.
+
+Só que "dar contexto" não é escrever um prompt mais comprido. É construir um sistema em volta do modelo. É disso que esse texto trata: como eu conduzo contexto na prática, com os mecanismos que eu uso de verdade.
+
+## O prompt é a ponta, não o trabalho
+
+A indústria inteira virou uma caça ao prompt perfeito. Tem curso, template, "engenharia de prompt". O prompt importa, claro. Mas ele é os últimos cinco por cento.
+
+Os outros noventa e cinco acontecem antes de você apertar enter: o que o modelo já sabe quando lê o seu pedido, o que ele não pode esquecer no meio do caminho, e o que ele é obrigado a checar antes de afirmar qualquer coisa.
+
+Pra mim, contexto é tudo isso junto. É o conteúdo inteiro que está na cabeça do modelo na hora da resposta, mais o sistema que decide o que entra ali. No dia em que eu parei de pensar em "prompt" e comecei a pensar em "sistema de contexto", a qualidade do que eu produzo mudou de patamar.
+
+São basicamente seis movimentos. Nenhum é mágico. Todos são engenharia.
+
+## 1. Alimentar com realidade antes de gerar
+
+Um modelo gera a partir do que ele tem. Se você não dá realidade, ele preenche com o que parece certo. E "parecer certo" é exatamente onde mora o bug: a API que mudou de assinatura, a biblioteca que foi descontinuada, o padrão que era moda há três anos e hoje é pegadinha.
+
+No meu harness, pesquisar não é opcional. É o passo zero. Antes de escrever uma linha, eu busco implementações que já existem, confirmo o comportamento real na documentação da fonte, e checo o pacote no registro antes de adotar. Só depois o modelo gera. A ordem é fixa de propósito: realidade primeiro, código depois.
+
+Foi assim que eu fiz este site. Antes de decidir como resolver a tipografia fluida ou a animação, eu olhei o que já existia e funcionava, em vez de deixar o modelo improvisar a partir de memória. Parece mais lento. Não é. Lento é debugar três horas um código que a IA inventou em cima de um modelo mental velho.
+
+## 2. Estruturar em camadas, não num prompt gigante
+
+A tentação é jogar tudo que você sabe num bloco de instruções enorme. O problema é que isso vira ruído. O modelo se perde no meio, e você não consegue manter aquilo vivo.
+
+Eu trato instrução como camada. Tem uma base que vale pra qualquer projeto: imutabilidade, cobertura de teste, como tratar erro, o que nunca commitar. E tem camadas específicas por stack, que sobrescrevem a base quando o idioma pede outra coisa. É a mesma lógica de especificidade do CSS: o específico ganha do geral.
+
+Somando tudo, são muitos arquivos de regra. Mas o agente nunca recebe todos de uma vez. Ele recebe a camada que importa pra aquela tarefa, naquela linguagem. O ganho não está no volume. Está na estrutura que entrega a coisa certa na hora certa.
+
+## 3. Persistir entre sessões
+
+O modelo esquece tudo quando a janela fecha. Sem memória, você reexplica o projeto do zero toda vez, e ele recomete os mesmos erros toda vez.
+
+A minha solução é memória como índice, não como despejo. Cada fato que importa vira um arquivo curto. Um índice aponta pra eles. Quando uma sessão começa, o agente já abre sabendo o estado do projeto, as decisões que foram tomadas e por quê, e as restrições que ele não pode quebrar.
+
+O detalhe que faz diferença está no que eu escolho guardar. Não é jogar a conversa inteira de volta na sessão seguinte. É registrar o que ficou decidido e linkar o resto. Memória enxuta vale mais que histórico completo, porque histórico completo também é ruído. Este site, por exemplo, tem uma memória que sabe onde está o deploy, qual é o posicionamento e o que já foi resolvido. Eu não reconto isso a cada vez.
+
+## 4. Restringir e forçar fatos
+
+Liberdade total é o caminho mais curto pra alucinação. Um sistema bom precisa de freio.
+
+O freio que eu mais uso é um gate que me obriga a declarar os fatos antes de uma ação que importa: o que esse comando faz, o que exatamente eu estou mudando, o que eu espero que aconteça. Soa burocrático. Na prática, é o que pega o erro antes dele virar dano.
+
+Isso vem de um princípio que eu levo a sério: saída de IA é rascunho, não verdade. O sistema tem que tratar cada resultado como algo a verificar, não como algo pronto. Verificação não é uma etapa lá no fim. É parte do contexto, o tempo todo.
+
+## 5. Isolar contexto por tarefa
+
+Existe uma intuição errada de que mais contexto é sempre melhor. Não é. Um modelo carregando a base de código inteira na cabeça performa pior que um modelo focado no pedaço certo.
+
+Por isso eu delego. Quando preciso de revisão de segurança, mando pra um agente que só pensa em segurança, com o contexto de segurança e nada mais. A revisão de tipos vai pra outro, com o contexto de tipos. Cada um trabalha sem o ruído do outro, e vários ao mesmo tempo.
+
+A regra que eu sigo é simples: menos contexto, mas o certo, ganha de mais contexto qualquer.
+
+## 6. Fechar o loop
+
+O melhor contexto é o que se acumula. Um erro que eu resolvo uma vez não devia voltar do zero na próxima.
+
+Então o sistema aprende. Um problema resolvido vira um padrão, e o padrão vira algo que ativa sozinho quando a situação se repete. Cada projeto deixa o harness um pouco mais afiado pro próximo. O contexto não fica parado. Ele compõe.
+
+## Por que isso importa
+
+Repara que nenhum desses seis movimentos deixa a IA "mais inteligente". O modelo é o mesmo pra todo mundo. O que eles fazem é deixar a IA confiável, que é uma coisa bem diferente.
+
+E confiabilidade é o que separa brincar de usar pra valer. Um chute bonito você joga fora. Um resultado em que você pode confiar, você coloca em produção.
+
+Esse é o ponto que eu defendo desde sempre: mágica não escala, engenharia escala. Tratar IA como mágica é torcer pra dar certo. Tratar como sistema é construir pra dar certo.
+
+A boa notícia é que nada disso é dom. É método. Dá pra ver, dá pra copiar, dá pra adaptar pro seu jeito de trabalhar. Contexto não é sorte. É a parte do trabalho que quase ninguém mostra, e é onde está quase todo o resultado.

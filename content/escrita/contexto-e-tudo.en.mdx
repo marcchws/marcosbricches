@@ -1,0 +1,80 @@
+---
+title: "How I get AI to actually deliver"
+description: "AI rarely fails because it can't. It fails for lack of context. How I build the system that feeds, structures, and verifies what the model knows."
+date: 2026-06-15
+lang: en
+---
+
+There's a scene I see all the time. Two people open the same AI, ask for the same thing, and get wildly different quality back. One walks away saying AI is hype. The other shipped a whole feature in the same window. Same model, same day.
+
+The difference isn't talent. And it's almost never "the secret prompt." It's context.
+
+I've worked with AI every day for more than two years, and if one thing has become clear in that time, it's this: an AI's answer is only as good as the context it gets. It doesn't matter how good the model is. If it answers in the dark, it guesses. If it answers knowing, it delivers.
+
+But "giving context" isn't writing a longer prompt. It's building a system around the model. That's what this piece is about: how I conduct context in practice, with the mechanisms I actually use.
+
+## The prompt is the tip, not the work
+
+The whole industry turned into a hunt for the perfect prompt. There are courses, templates, "prompt engineering." The prompt matters, sure. But it's the last five percent.
+
+The other ninety-five happen before you hit enter: what the model already knows when it reads your request, what it can't forget along the way, and what it's forced to check before it claims anything.
+
+To me, context is all of that together. It's the entire content in the model's head at answer time, plus the system that decides what goes in there. The day I stopped thinking in "prompts" and started thinking in "context systems," the quality of what I produce jumped a level.
+
+It comes down to six moves. None of them is magic. All of them are engineering.
+
+## 1. Feed it reality before it generates
+
+A model generates from what it has. If you don't give it reality, it fills the gap with what looks right. And "looks right" is exactly where the bug lives: the API that changed its signature, the library that got deprecated, the pattern that was trendy three years ago and is now a trap.
+
+In my harness, research isn't optional. It's step zero. Before I write a line, I look for implementations that already exist, confirm the real behavior in the source's docs, and check the package in the registry before adopting it. Only then does the model generate. The order is fixed on purpose: reality first, code second.
+
+That's how I built this site. Before deciding how to solve the fluid typography or the motion, I looked at what already existed and worked, instead of letting the model improvise from memory. It seems slower. It isn't. What's slow is debugging for three hours a piece of code the AI invented on top of a stale mental model.
+
+## 2. Structure it in layers, not one giant prompt
+
+The temptation is to dump everything you know into one huge block of instructions. The problem is that turns into noise. The model gets lost halfway through, and you can't keep it alive.
+
+I treat instructions as layers. There's a base that holds for any project: immutability, test coverage, how to handle errors, what to never commit. And there are stack-specific layers that override the base when the language asks for something else. It's the same logic as CSS specificity: the specific wins over the general.
+
+Add it all up and it's a lot of rule files. But the agent never gets all of them at once. It gets the layer that matters for that task, in that language. The gain isn't in the volume. It's in the structure that hands over the right thing at the right time.
+
+## 3. Persist it across sessions
+
+The model forgets everything when the window closes. Without memory, you re-explain the project from scratch every time, and it re-makes the same mistakes every time.
+
+My solution is memory as an index, not a dump. Each fact that matters becomes a short file. An index points to them. When a session starts, the agent already opens knowing the project's state, the decisions that were made and why, and the constraints it can't break.
+
+The detail that makes the difference is what I choose to keep. It's not throwing the whole conversation back into the next session. It's recording what got decided and linking the rest. Lean memory beats a full history, because a full history is also noise. This site, for instance, has a memory that knows where the deploy lives, what the positioning is, and what's already been solved. I don't retell that every time.
+
+## 4. Constrain it and force the facts
+
+Total freedom is the shortest path to hallucination. A good system needs a brake.
+
+The brake I use most is a gate that forces me to state the facts before an action that matters: what this command does, what exactly I'm changing, what I expect to happen. It sounds bureaucratic. In practice, it's what catches the mistake before it becomes damage.
+
+This comes from a principle I take seriously: AI output is a draft, not the truth. The system has to treat every result as something to verify, not as something finished. Verification isn't a step at the end. It's part of the context, the whole time.
+
+## 5. Isolate context per task
+
+There's a wrong intuition that more context is always better. It isn't. A model carrying the entire codebase in its head performs worse than one focused on the right piece.
+
+So I delegate. When I need a security review, I send it to an agent that only thinks about security, with the security context and nothing else. The type review goes to another, with the type context. Each works without the other's noise, and several at once.
+
+The rule I follow is simple: less context, but the right context, beats more context of any kind.
+
+## 6. Close the loop
+
+The best context is the kind that accumulates. A mistake I solve once shouldn't come back from scratch the next time.
+
+So the system learns. A solved problem becomes a pattern, and the pattern becomes something that fires on its own when the situation repeats. Each project leaves the harness a little sharper for the next one. The context doesn't sit still. It compounds.
+
+## Why this matters
+
+Notice that none of these six moves makes the AI "smarter." The model is the same for everyone. What they do is make the AI reliable, which is a very different thing.
+
+And reliability is what separates playing around from using it for real. A pretty guess you throw away. A result you can trust, you put in production.
+
+That's the point I've argued all along: magic doesn't scale, engineering does. Treating AI as magic is hoping it works out. Treating it as a system is building it to work.
+
+The good news is none of this is a gift. It's method. You can see it, copy it, adapt it to how you work. Context isn't luck. It's the part of the work almost nobody shows, and it's where almost all of the result is.

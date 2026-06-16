@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Marcos Bricches — engenharia de sistemas de IA",
+    "description": "Como eu penso e trabalho com IA: do design de produto à engenharia de sistemas. Construo e opero o harness em volta do Claude Code, e escrevo sobre como faço."
+  },
+  "a11y": {
+    "skip": "Pular para o conteúdo"
+  },
+  "nav": {
+    "think": "como penso",
+    "work": "o que construo",
+    "writing": "escrita",
+    "about": "sobre",
+    "cta": "contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "navPrimary": "Navegação principal",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Design · Código · Sistemas de IA",
+    "titleLead": "Eu faço a IA entregar",
+    "titleEm": "no padrão que produto exige.",
+    "sub": "Comecei no design, fui parar no código, e hoje trabalho na engenharia que faz a IA ser confiável. Este site é onde eu mostro como penso e como faço, sem transformar método em segredo.",
+    "ctaPrimary": "como eu penso",
+    "ctaGhost": "ler os textos"
+  },
+  "think": {
+    "eyebrow": "Como eu penso",
+    "titleLead": "No que eu acredito",
+    "titleKey": "sobre IA",
+    "lead": "Os princípios que guiam o meu trabalho. Não é teoria, é o que eu aplico todo dia.",
+    "items": [
+      {
+        "title": "IA é sistema, não mágica",
+        "body": "Trato um modelo como qualquer sistema de engenharia: estrutura, restrições e verificação. É o que faz o resultado parar de depender de sorte."
+      },
+      {
+        "title": "Contexto é tudo",
+        "body": "A resposta da IA vale o tanto que o contexto vale. Meu trabalho é conduzir esse contexto, do briefing cru à pesquisa e à referência, até dar pra confiar no resultado."
+      },
+      {
+        "title": "Uso a IA no limite",
+        "body": "A maioria usa uma fração do que a ferramenta consegue. Eu uso até o limite do que ela foi feita pra fazer, e construo a estrutura que sustenta isso."
+      },
+      {
+        "title": "Não confio na primeira resposta",
+        "body": "Saída de IA é rascunho, não verdade. Reviso, testo e questiono cada resultado antes de dar como pronto. A estrutura existe pra isso: pegar o erro antes que ele passe."
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "O que construo",
+    "titleLead": "O",
+    "titleKey": "harness que eu opero",
+    "lead": "Construí e opero um harness sobre o Claude Code. É versionado e auditado contra a documentação oficial, com agentes e skills próprios e verificação embutida. É onde os princípios viram estrutura.",
+    "items": [
+      {
+        "name": "Hooks & gates",
+        "body": "Checagens automáticas antes de cada ação do agente: qualidade, segurança, consistência."
+      },
+      {
+        "name": "Governança",
+        "body": "Regras e permissões que mantêm o agente no escopo. Tudo rastreável e auditável."
+      },
+      {
+        "name": "Memória",
+        "body": "Decisões e contexto persistem entre sessões. O agente não recomeça do zero."
+      },
+      {
+        "name": "Orquestração",
+        "body": "Vários agentes trabalhando em paralelo, cada um no seu pedaço, dentro do mesmo padrão."
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "Escrita",
+    "titleLead": "Notas sobre",
+    "titleKey": "como eu trabalho com IA",
+    "lead": "Onde eu destrincho o raciocínio: como conduzo contexto, como penso a estrutura em volta do modelo, o que aprendo usando IA no limite.",
+    "empty": "Os primeiros artigos saem em breve."
+  },
+  "escrita": {
+    "eyebrow": "Escrita",
+    "metaTitle": "Escrita sobre engenharia de IA",
+    "titleLead": "Notas sobre",
+    "titleKey": "como eu trabalho com IA",
+    "lead": "Onde eu destrincho o raciocínio: como conduzo contexto, como penso a estrutura em volta do modelo, o que aprendo usando IA no limite.",
+    "empty": "Os primeiros artigos saem em breve.",
+    "readMore": "ler artigo",
+    "all": "todos os artigos",
+    "back": "voltar ao site"
+  },
+  "about": {
+    "eyebrow": "Sobre",
+    "titleLead": "De design a",
+    "titleKey": "engenharia de sistemas de IA",
+    "photoAlt": "Marcos Bricches",
+    "body": [
+      "Comecei em design de produto. Passei pela interface, depois pelo código. Hoje trabalho na camada que mais me interessa: o harness que faz a IA ser confiável.",
+      "O olhar de design me faz começar pelo produto. A cabeça de engenharia me faz tratar a IA como sistema. Não tomo a primeira resposta do modelo como pronta: reviso e testo antes de usar.",
+      "Esse site foi feito com esse método."
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "titleLead": "Vamos trocar",
+    "titleKey": "ideia",
+    "body": "Se você curte esse tipo de assunto, está construindo algo parecido, ou só quer conversar, me acha nos canais abaixo.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "behance": "Behance",
+    "newTab": "abre em nova aba"
+  },
+  "footer": {
+    "tagline": "Como eu penso e trabalho com IA.",
+    "navTitle": "Navegação",
+    "socialTitle": "Redes",
+    "newTab": "abre em nova aba",
+    "rights": "© 2026 Marcos Bricches",
+    "location": "São Paulo · Brasil"
+  }
+}

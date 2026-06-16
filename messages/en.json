@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Marcos Bricches — AI systems engineering",
+    "description": "How I think and work with AI: from product design to systems engineering. I build and operate the harness around Claude Code, and I write about how."
+  },
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "nav": {
+    "think": "how I think",
+    "work": "what I build",
+    "writing": "writing",
+    "about": "about",
+    "cta": "contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "navPrimary": "Primary navigation",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Design · Code · AI Systems",
+    "titleLead": "I make AI deliver",
+    "titleEm": "at the standard products demand.",
+    "sub": "I started in design, ended up in code, and today I work on the engineering that makes AI reliable. This site is where I show how I think and how I work, without turning method into a secret.",
+    "ctaPrimary": "how I think",
+    "ctaGhost": "read the writing"
+  },
+  "think": {
+    "eyebrow": "How I think",
+    "titleLead": "What I believe",
+    "titleKey": "about AI",
+    "lead": "The principles that guide my work. Not theory, what I apply every day.",
+    "items": [
+      {
+        "title": "AI is a system, not magic",
+        "body": "I treat a model like any engineering system: structure, constraints, verification. That's what stops the result from depending on luck."
+      },
+      {
+        "title": "Context is everything",
+        "body": "An AI's answer is only as good as the context it gets. My job is conducting that context, from raw brief to research and references, until the result is something you can trust."
+      },
+      {
+        "title": "I push AI to its limit",
+        "body": "Most people use a fraction of what the tool can do. I use it to the edge of what it was built for, and build the structure that holds it up."
+      },
+      {
+        "title": "I don't trust the first answer",
+        "body": "AI output is a draft, not the truth. I review, test, and question every result before calling it done. That's what the structure is for: catching the mistake before it gets through."
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "What I build",
+    "titleLead": "The",
+    "titleKey": "harness I operate",
+    "lead": "I built and operate a harness on top of Claude Code. It's versioned and audited against the official docs, with custom agents and skills and verification built in. It's where the principles become structure.",
+    "items": [
+      {
+        "name": "Hooks & gates",
+        "body": "Automated checks before each agent action: quality, security, consistency."
+      },
+      {
+        "name": "Governance",
+        "body": "Rules and permissions that keep the agent in scope. Everything traceable and auditable."
+      },
+      {
+        "name": "Memory",
+        "body": "Decisions and context persist across sessions. The agent doesn't start from zero."
+      },
+      {
+        "name": "Orchestration",
+        "body": "Several agents working in parallel, each on its piece, inside the same standard."
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "Writing",
+    "titleLead": "Notes on",
+    "titleKey": "how I work with AI",
+    "lead": "Where I break down the reasoning: how I conduct context, how I think about the structure around the model, what I learn pushing AI to its limit.",
+    "empty": "First articles coming soon."
+  },
+  "escrita": {
+    "eyebrow": "Writing",
+    "metaTitle": "Writing on AI engineering",
+    "titleLead": "Notes on",
+    "titleKey": "how I work with AI",
+    "lead": "Where I break down the reasoning: how I conduct context, how I think about the structure around the model, what I learn pushing AI to its limit.",
+    "empty": "First articles coming soon.",
+    "readMore": "read",
+    "all": "all posts",
+    "back": "back to site"
+  },
+  "about": {
+    "eyebrow": "About",
+    "titleLead": "From design to",
+    "titleKey": "AI systems engineering",
+    "photoAlt": "Marcos Bricches",
+    "body": [
+      "I started in product design. Moved through interface, then code. Today I work in the layer I care about most: the harness that makes AI reliable.",
+      "The design eye makes me start from the product. The engineering head makes me treat AI as a system. I don't take the model's first answer as done: I review and test before using it.",
+      "This site was built with that method."
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "titleLead": "Let's trade",
+    "titleKey": "ideas",
+    "body": "If you're into this kind of topic, building something similar, or just want to talk, find me on the channels below.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "behance": "Behance",
+    "newTab": "opens in a new tab"
+  },
+  "footer": {
+    "tagline": "How I think and work with AI.",
+    "navTitle": "Navigation",
+    "socialTitle": "Elsewhere",
+    "newTab": "opens in a new tab",
+    "rights": "© 2026 Marcos Bricches",
+    "location": "São Paulo · Brazil"
+  }
+}

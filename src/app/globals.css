@@ -1,0 +1,266 @@
+/* ============================================================
+   Design tokens — Dark luxury técnico (Harness Engineering)
+   Locked in estrategia-marca-pessoal.md (seção 7)
+   ============================================================ */
+:root {
+  /* Surface — preto quente, NÃO #000 */
+  --bg: oklch(15% 0.012 40);
+  --bg-2: oklch(18% 0.014 45);
+  --bg-3: oklch(21% 0.014 48);
+
+  /* Ink — contrast tuned for WCAG AA on --bg (4.5:1 for body text) */
+  --ink: oklch(92% 0.01 70);
+  --muted: oklch(72% 0.012 60);
+  --faint: oklch(58% 0.012 60);
+
+  /* Acento ÚNICO — âmbar-cobre */
+  --accent: oklch(76% 0.13 70);
+  --accent-ink: oklch(20% 0.05 60);
+
+  --line: oklch(28% 0.012 50);
+
+  /* Tipografia */
+  /* --font-display (Clash Display) and --font-body (General Sans) come from next/font */
+  --font-mono: ui-monospace, "SFMono-Regular", monospace;
+
+  /* Fluid type scale — Utopia method, calibrated 320px → 1440px.
+     Each step interpolates linearly between a min and max size (px in comments).
+     Width-based only (never tied to viewport height). */
+  --text-xs: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem); /* 13 → 14 */
+  --text-sm: clamp(0.9375rem, 0.91rem + 0.13vw, 1rem); /* 15 → 16 */
+  --text-base: clamp(1.0625rem, 1.03rem + 0.18vw, 1.1875rem); /* 17 → 19 */
+  --text-lg: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem); /* 20 → 24 */
+  --text-xl: clamp(1.8125rem, 1.67rem + 0.71vw, 2.3125rem); /* 29 → 37 */
+  --text-2xl: clamp(2.5625rem, 2.24rem + 1.61vw, 3.6875rem); /* 41 → 59 */
+  --text-hero: clamp(2.75rem, 2.04rem + 3.57vw, 5.25rem); /* 44 → 84 */
+
+  /* Ritmo */
+  --space-section: clamp(5rem, 3rem + 8vw, 11rem);
+  --container: 72rem;
+  --gutter: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+
+  /* Motion */
+  --dur: 320ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: dark;
+  /* Native form controls (checkbox, radio, range, progress) inherit the brand accent */
+  accent-color: var(--accent);
+  /* Firefox scrollbar — thin, brand-tinted */
+  scrollbar-color: var(--line) transparent;
+  scrollbar-width: thin;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* anchor targets land below the fixed header */
+  scroll-padding-top: 6rem;
+  /* reserve the scrollbar track so layout doesn't shift when it appears */
+  scrollbar-gutter: stable;
+  /* No scroll-behavior: smooth — Lenis owns smooth scroll; native conflicts with it and AT. */
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+  position: relative;
+  /* clip (not hidden) contains decorative overflow without breaking position:sticky
+     and without masking a genuine reflow failure as a hidden scrollbar */
+  overflow-x: clip;
+  /* warm, low-key tap flash on touch instead of the default blue box */
+  -webkit-tap-highlight-color: color-mix(in oklch, var(--accent) 24%, transparent);
+  caret-color: var(--accent);
+}
+
+/* ============================================================
+   Browser chrome personalization — scrollbar, autofill, selection
+   ============================================================ */
+
+/* WebKit / Blink scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border: 3px solid var(--bg);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--accent) 55%, var(--line));
+}
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
+/* Selection — both engines */
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+::-moz-selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* List markers pick up the accent */
+::marker {
+  color: var(--accent);
+}
+
+/* Autofill — kill the default white/yellow box, keep brand surface + ink.
+   Long transition delay is the standard trick to defeat the UA background. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--accent);
+  border-radius: inherit;
+  box-shadow: 0 0 0 1000px var(--bg-2) inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-2) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Grão sutil — atmosfera, não gradiente-blob.
+   Sem mix-blend-mode: um elemento fixo com blend força o browser a recompor a
+   viewport inteira a cada frame de scroll (jank). Opacidade leve dá a textura. */
+.grain {
+  position: fixed;
+  inset: 0;
+  /* SVG is a replaced element: inset:0 alone won't stretch it (it keeps its
+     intrinsic 300x150), which left a lighter noise block in the top-left.
+     Explicit full-viewport size makes the grain cover everything. */
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Voz de engenheiro — labels mono */
+/* Legacy hook — now neutralized to body font (mono removed from copy). */
+.mono {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.eyebrow {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip link — hidden until focused (SC 2.4.1 Bypass Blocks) */
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.6rem 1.1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  transition: top 150ms ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Pre-animation state in CSS so the SSR output already starts hidden and the
+   scroll-reveal has nothing to snap (kills the flash). Reduced-motion users
+   never match this rule, so they see everything immediately. Scoped to the home
+   main (ScrollReveals only runs there) — the escrita pages have no reveal
+   and must stay visible. Selectors mirror ScrollReveals' gsap.set(opacity:0). */
+@media (prefers-reduced-motion: no-preference) {
+  main:not(.escrita-main) .section-head,
+  main:not(.escrita-main) .about-body p,
+  main:not(.escrita-main) .writing-empty,
+  main:not(.escrita-main) .contact-inner > *,
+  main:not(.escrita-main) .method-item,
+  main:not(.escrita-main) .domain-card {
+    opacity: 0;
+  }
+}
