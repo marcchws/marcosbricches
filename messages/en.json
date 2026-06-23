@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Marcos Bricches — AI systems engineering",
-    "description": "How I think and work with AI: from product design to systems engineering. I build and operate the harness around Claude Code, and I write about how."
+    "title": "Marcos Bricches · Product Designer",
+    "description": "Product Designer at Devio. I drive AI through the product, from research to delivery in code, backed by harness engineering."
   },
   "a11y": {
     "skip": "Skip to content"
   },
   "nav": {
     "think": "how I think",
-    "work": "what I build",
+    "work": "what I do",
     "writing": "writing",
     "about": "about",
     "cta": "contact",
@@ -18,26 +18,26 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "Design · Code · AI Systems",
-    "titleLead": "I make AI deliver",
-    "titleEm": "at the standard products demand.",
-    "sub": "I started in design, ended up in code, and today I work on the engineering that makes AI reliable. This site is where I show how I think and how I work, without turning method into a secret.",
+    "eyebrow": "Product Design · Code · AI driven by product",
+    "titleLead": "I drive AI",
+    "titleEm": "through the product.",
+    "sub": "I'm a Product Designer and I ship my own design in code. The product mind drives the AI, from research to delivery, and the harness I operate holds the standard. This is where I show how I think and how I work.",
     "ctaPrimary": "how I think",
     "ctaGhost": "read the writing"
   },
   "think": {
     "eyebrow": "How I think",
     "titleLead": "What I believe",
-    "titleKey": "about AI",
-    "lead": "The principles that guide my work. Not theory, what I apply every day.",
+    "titleKey": "about product and AI",
+    "lead": "The principles that guide my work, from product to AI. Not theory, what I apply every day.",
     "items": [
       {
-        "title": "AI is a system, not magic",
-        "body": "I treat a model like any engineering system: structure, constraints, verification. That's what stops the result from depending on luck."
+        "title": "Product drives the AI",
+        "body": "An AI's answer is worth as much as the product decision behind it. I'm the one conducting it, from raw brief to research and references, until the result is something you can trust."
       },
       {
-        "title": "Context is everything",
-        "body": "An AI's answer is only as good as the context it gets. My job is conducting that context, from raw brief to research and references, until the result is something you can trust."
+        "title": "AI is a system, not magic",
+        "body": "I treat a model like any engineering system, with structure, constraints and verification. That's what stops the result from depending on luck."
       },
       {
         "title": "I push AI to its limit",
@@ -45,47 +45,47 @@
       },
       {
         "title": "I don't trust the first answer",
-        "body": "AI output is a draft, not the truth. I review, test, and question every result before calling it done. That's what the structure is for: catching the mistake before it gets through."
+        "body": "AI output is a draft, not the truth. I review, test and question every result before calling it done. The structure is there to catch the mistake before it gets through."
       }
     ]
   },
   "work": {
-    "eyebrow": "What I build",
-    "titleLead": "The",
-    "titleKey": "harness I operate",
-    "lead": "I built and operate a harness on top of Claude Code. It's versioned and audited against the official docs, with custom agents and skills and verification built in. It's where the principles become structure.",
+    "eyebrow": "What I do",
+    "titleLead": "Product,",
+    "titleKey": "from concept to code",
+    "lead": "I run the full product cycle and ship it in code, and I use AI driven by the product to cover all of it at the same standard.",
     "items": [
       {
-        "name": "Hooks & gates",
-        "body": "Automated checks before each agent action: quality, security, consistency."
+        "name": "End-to-end product design",
+        "body": "Research, concept, interface and spec. Every project goes through my process before it ships."
       },
       {
-        "name": "Governance",
-        "body": "Rules and permissions that keep the agent in scope. Everything traceable and auditable."
+        "name": "Design that becomes code",
+        "body": "I implement my own design in React, TypeScript and Next.js, so design and front-end come out as a single delivery."
       },
       {
-        "name": "Memory",
-        "body": "Decisions and context persist across sessions. The agent doesn't start from zero."
+        "name": "Design system",
+        "body": "The visual and component standards that keep products consistent."
       },
       {
-        "name": "Orchestration",
-        "body": "Several agents working in parallel, each on its piece, inside the same standard."
+        "name": "Harness as the lever",
+        "body": "I operate the Devio Harness around Claude Code to make AI deliver reliably, and it's what lets me cover product and code on my own."
       }
     ]
   },
   "writing": {
     "eyebrow": "Writing",
     "titleLead": "Notes on",
-    "titleKey": "how I work with AI",
-    "lead": "Where I break down the reasoning: how I conduct context, how I think about the structure around the model, what I learn pushing AI to its limit.",
+    "titleKey": "product and AI at the limit",
+    "lead": "Where I break down the reasoning, how I drive AI through the product, how I think about the structure around the model, and what I learn pushing AI to its limit.",
     "empty": "First articles coming soon."
   },
   "escrita": {
     "eyebrow": "Writing",
-    "metaTitle": "Writing on AI engineering",
+    "metaTitle": "Writing on product and AI",
     "titleLead": "Notes on",
-    "titleKey": "how I work with AI",
-    "lead": "Where I break down the reasoning: how I conduct context, how I think about the structure around the model, what I learn pushing AI to its limit.",
+    "titleKey": "product and AI at the limit",
+    "lead": "Where I break down the reasoning, how I drive AI through the product, how I think about the structure around the model, and what I learn pushing AI to its limit.",
     "empty": "First articles coming soon.",
     "readMore": "read",
     "all": "all posts",
@@ -93,12 +93,13 @@
   },
   "about": {
     "eyebrow": "About",
-    "titleLead": "From design to",
-    "titleKey": "AI systems engineering",
+    "titleLead": "Product in the driver's seat,",
+    "titleKey": "engineering as the lever",
     "photoAlt": "Marcos Bricches",
     "body": [
-      "I started in product design. Moved through interface, then code. Today I work in the layer I care about most: the harness that makes AI reliable.",
-      "The design eye makes me start from the product. The engineering head makes me treat AI as a system. I don't take the model's first answer as done: I review and test before using it.",
+      "I'm a Product Designer at Devio and I lead the company's product design, from research and concept to interface and spec.",
+      "My edge is in both sides, with the product in the driver's seat. I'm the one who drives the AI through the product, and since I don't stop at handoff, I implement my own design in React, TypeScript and Next.js, so design and front-end come out as a single delivery.",
+      "The other side is harness engineering. I built and operate the Devio Harness around Claude Code, with hooks and gates that check the work before it becomes a commit, so the model's output is a draft until it passes.",
       "This site was built with that method."
     ]
   },
@@ -113,7 +114,7 @@
     "newTab": "opens in a new tab"
   },
   "footer": {
-    "tagline": "How I think and work with AI.",
+    "tagline": "How I drive AI through the product.",
     "navTitle": "Navigation",
     "socialTitle": "Elsewhere",
     "newTab": "opens in a new tab",

@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Marcos Bricches — engenharia de sistemas de IA",
-    "description": "Como eu penso e trabalho com IA: do design de produto à engenharia de sistemas. Construo e opero o harness em volta do Claude Code, e escrevo sobre como faço."
+    "title": "Marcos Bricches · Product Designer",
+    "description": "Product Designer na Devio. Conduzo a IA pelo produto, da pesquisa à entrega em código, e sustento isso com harness engineering."
   },
   "a11y": {
     "skip": "Pular para o conteúdo"
   },
   "nav": {
     "think": "como penso",
-    "work": "o que construo",
+    "work": "o que faço",
     "writing": "escrita",
     "about": "sobre",
     "cta": "contato",
@@ -18,26 +18,26 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "Design · Código · Sistemas de IA",
-    "titleLead": "Eu faço a IA entregar",
-    "titleEm": "no padrão que produto exige.",
-    "sub": "Comecei no design, fui parar no código, e hoje trabalho na engenharia que faz a IA ser confiável. Este site é onde eu mostro como penso e como faço, sem transformar método em segredo.",
+    "eyebrow": "Product Design · Código · IA conduzida pelo produto",
+    "titleLead": "Conduzo a IA",
+    "titleEm": "pelo produto.",
+    "sub": "Sou Product Designer e implemento o próprio design em código. É a cabeça de produto que conduz a IA, da pesquisa à entrega, e o harness que eu opero garante o padrão. Aqui eu mostro como penso e como faço.",
     "ctaPrimary": "como eu penso",
     "ctaGhost": "ler os textos"
   },
   "think": {
     "eyebrow": "Como eu penso",
     "titleLead": "No que eu acredito",
-    "titleKey": "sobre IA",
-    "lead": "Os princípios que guiam o meu trabalho. Não é teoria, é o que eu aplico todo dia.",
+    "titleKey": "sobre produto e IA",
+    "lead": "Os princípios que guiam o meu trabalho, do produto à IA. Não é teoria, é o que eu aplico todo dia.",
     "items": [
       {
-        "title": "IA é sistema, não mágica",
-        "body": "Trato um modelo como qualquer sistema de engenharia: estrutura, restrições e verificação. É o que faz o resultado parar de depender de sorte."
+        "title": "Produto conduz a IA",
+        "body": "A resposta da IA vale o tanto que a decisão de produto por trás dela vale. Sou eu que conduzo, do briefing cru à pesquisa e à referência, até dar pra confiar no resultado."
       },
       {
-        "title": "Contexto é tudo",
-        "body": "A resposta da IA vale o tanto que o contexto vale. Meu trabalho é conduzir esse contexto, do briefing cru à pesquisa e à referência, até dar pra confiar no resultado."
+        "title": "IA é sistema, não mágica",
+        "body": "Trato um modelo como qualquer sistema de engenharia, com estrutura, restrições e verificação. É o que faz o resultado parar de depender de sorte."
       },
       {
         "title": "Uso a IA no limite",
@@ -45,47 +45,47 @@
       },
       {
         "title": "Não confio na primeira resposta",
-        "body": "Saída de IA é rascunho, não verdade. Reviso, testo e questiono cada resultado antes de dar como pronto. A estrutura existe pra isso: pegar o erro antes que ele passe."
+        "body": "Saída de IA é rascunho, não verdade. Reviso, testo e questiono cada resultado antes de dar como pronto. A estrutura existe pra pegar o erro antes que ele passe."
       }
     ]
   },
   "work": {
-    "eyebrow": "O que construo",
-    "titleLead": "O",
-    "titleKey": "harness que eu opero",
-    "lead": "Construí e opero um harness sobre o Claude Code. É versionado e auditado contra a documentação oficial, com agentes e skills próprios e verificação embutida. É onde os princípios viram estrutura.",
+    "eyebrow": "O que eu faço",
+    "titleLead": "Produto,",
+    "titleKey": "do conceito ao código",
+    "lead": "Faço o ciclo inteiro de produto e entrego em código, e uso a IA conduzida pelo produto pra cobrir tudo no mesmo padrão.",
     "items": [
       {
-        "name": "Hooks & gates",
-        "body": "Checagens automáticas antes de cada ação do agente: qualidade, segurança, consistência."
+        "name": "Design de produto ponta a ponta",
+        "body": "Pesquisa, conceito, interface e especificação. Todo projeto passa pelo meu processo antes de entrar em produção."
       },
       {
-        "name": "Governança",
-        "body": "Regras e permissões que mantêm o agente no escopo. Tudo rastreável e auditável."
+        "name": "Design que vira código",
+        "body": "Implemento o próprio design em React, TypeScript e Next.js, então design e front-end saem como uma entrega só."
       },
       {
-        "name": "Memória",
-        "body": "Decisões e contexto persistem entre sessões. O agente não recomeça do zero."
+        "name": "Design system",
+        "body": "Os padrões visuais e de componentes que mantêm consistência entre produtos."
       },
       {
-        "name": "Orquestração",
-        "body": "Vários agentes trabalhando em paralelo, cada um no seu pedaço, dentro do mesmo padrão."
+        "name": "Harness como alavanca",
+        "body": "Opero o Devio Harness em volta do Claude Code pra fazer a IA entregar com confiabilidade, e é o que me deixa cobrir produto e código sozinho."
       }
     ]
   },
   "writing": {
     "eyebrow": "Escrita",
     "titleLead": "Notas sobre",
-    "titleKey": "como eu trabalho com IA",
-    "lead": "Onde eu destrincho o raciocínio: como conduzo contexto, como penso a estrutura em volta do modelo, o que aprendo usando IA no limite.",
+    "titleKey": "produto e IA no limite",
+    "lead": "Onde eu destrincho o raciocínio, como conduzo a IA pelo produto, como penso a estrutura em volta do modelo, e o que aprendo usando IA no limite.",
     "empty": "Os primeiros artigos saem em breve."
   },
   "escrita": {
     "eyebrow": "Escrita",
-    "metaTitle": "Escrita sobre engenharia de IA",
+    "metaTitle": "Escrita sobre produto e IA",
     "titleLead": "Notas sobre",
-    "titleKey": "como eu trabalho com IA",
-    "lead": "Onde eu destrincho o raciocínio: como conduzo contexto, como penso a estrutura em volta do modelo, o que aprendo usando IA no limite.",
+    "titleKey": "produto e IA no limite",
+    "lead": "Onde eu destrincho o raciocínio, como conduzo a IA pelo produto, como penso a estrutura em volta do modelo, e o que aprendo usando IA no limite.",
     "empty": "Os primeiros artigos saem em breve.",
     "readMore": "ler artigo",
     "all": "todos os artigos",
@@ -93,12 +93,13 @@
   },
   "about": {
     "eyebrow": "Sobre",
-    "titleLead": "De design a",
-    "titleKey": "engenharia de sistemas de IA",
+    "titleLead": "Produto no volante,",
+    "titleKey": "engenharia como alavanca",
     "photoAlt": "Marcos Bricches",
     "body": [
-      "Comecei em design de produto. Passei pela interface, depois pelo código. Hoje trabalho na camada que mais me interessa: o harness que faz a IA ser confiável.",
-      "O olhar de design me faz começar pelo produto. A cabeça de engenharia me faz tratar a IA como sistema. Não tomo a primeira resposta do modelo como pronta: reviso e testo antes de usar.",
+      "Sou Product Designer na Devio e lidero o design de produto da empresa, da pesquisa e do conceito até a interface e a especificação.",
+      "Meu diferencial está nos dois lados, com o produto no volante. Sou eu que conduzo a IA pelo produto, e como não paro no handoff, implemento o próprio design em React, TypeScript e Next.js, então design e front-end saem como uma entrega só.",
+      "O outro lado é harness engineering. Criei e opero o Devio Harness em volta do Claude Code, com hooks e gates que verificam o trabalho antes de virar commit, então a saída do modelo é rascunho até passar.",
       "Esse site foi feito com esse método."
     ]
   },
@@ -113,7 +114,7 @@
     "newTab": "abre em nova aba"
   },
   "footer": {
-    "tagline": "Como eu penso e trabalho com IA.",
+    "tagline": "Como eu conduzo a IA pelo produto.",
     "navTitle": "Navegação",
     "socialTitle": "Redes",
     "newTab": "abre em nova aba",
